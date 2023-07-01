@@ -228,7 +228,8 @@ func StartProtocol(endpoint *EasyConnectEndpoint, server string, token *[48]byte
 			}
 			counter += 1
 		}
-		panic("receive retry limit exceeded.")
+		// panic("receive retry limit exceeded.")
+		log.Print("receive retry limit exceeded")
 	}
 
 	go RX()
@@ -242,7 +243,8 @@ func StartProtocol(endpoint *EasyConnectEndpoint, server string, token *[48]byte
 			}
 			counter += 1
 		}
-		panic("send retry limit exceeded.")
+		// panic("send retry limit exceeded.")
+		log.Print("send retry limit exceeded")
 	}
 
 	go TX()
